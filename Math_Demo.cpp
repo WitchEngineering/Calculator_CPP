@@ -3,6 +3,7 @@
 #include <string> 
 #include <vector> 
 
+
 using namespace std; 
 
 // Tarea: I need, Distance, Pitagoras, Area, Volume, etc
@@ -37,7 +38,7 @@ double get_mutlt_num() { return mult_num;
 // Getter for div: 
 double get_div_num() { return div_num;
 }
-//----------------
+//----------------------------------------//
 
 
 // Getter for math completion: 
@@ -49,7 +50,7 @@ bool is_Completed() const {
 
 class simple_math_menu { 
     private:
-        vector <simple_math> simple; // Creates a list of tasks 
+        vector <simple_math> simple; // Idea: Hacerlo que ponga el historial de las operaciones.
 
     public:
 
