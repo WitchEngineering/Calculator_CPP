@@ -2,6 +2,7 @@
 #include <cmath> 
 #include <string> 
 
+
 using namespace std; 
 
 // Tarea: I need, Distance, Pitagoras, Area, Volume, etc
@@ -101,6 +102,59 @@ void addNumber(long double number_1, long double number_2) {
     
     // Advace Options functionality :
 
+    void Pitagoras() { 
+        // Formulas: 
+        // c = sqrt(pow(a,2) + pow(b,2))
+        // a = sqrt(pow(c,2) - pow(b,2))
+        // b = sqrt(pow(c,2) - pow(a,2))
+        double a; 
+        double b; 
+        double c; 
+        int x; // User Input: 
+        cout << "Whats your Hipotenus: (a = 1, b = 2, c = 3)" << endl; 
+        cin >> x;
+
+        if (x == 1) { 
+            cout << "Enter the value of b: " << endl; 
+            cin >> b; 
+            cout << "Enter the value of c: " << endl; 
+            cin >> c; 
+
+            // Hip is:  
+            double a = sqrt(pow(c,2) - pow(b,2));
+            cout << "Hip is: " << a << endl; 
+
+        } else if(x == 2) { 
+            cout << "Enter the value of c: " << endl; 
+            cin >> c; 
+            cout << "Enter the value of a: " << endl; 
+            cin >> a; 
+
+            // Hip is: 
+            double  b = sqrt(pow(c,2) - pow(a,2));
+            cout << "Hip is: " << b << endl; 
+
+        } else if (x == 3) { 
+            cout << "Enter the value of b: " << endl; 
+            cin >> b; 
+            cout << "Enter the value of a: " << endl; 
+            cin >> a; 
+
+              // Hip is:
+            double c = sqrt(pow(a,2) + pow(b,2));
+            cout << "Hip is: " << c << endl; 
+        }
+      
+        int y; 
+        cout << "Want to continue? ( 0 = Yes, 1 = No)" << endl;
+        if (y == 1) { 
+            advaceOptionsDips();
+        } else { 
+            Pitagoras(); 
+        }
+        
+    }
+
     void Distance() { 
         // Num_1 = X2, Num_2 = X1, Num_3 = Y2, Num_4 = Y1. 
 
@@ -119,6 +173,14 @@ void addNumber(long double number_1, long double number_2) {
         double distance = sqrt(pow_1 + pow_2);
         cout << "Distance = " << distance << endl;
 
+        int y; 
+        cout << "Want to continue? ( 0 = Yes, 1 = No)" << endl;
+        if (y == 1) { 
+            advaceOptionsDips();
+        } else { 
+            Distance(); 
+        }
+
     }
     
     void AreaUniversal() {
@@ -135,25 +197,144 @@ void addNumber(long double number_1, long double number_2) {
         cout << "Chose your answer: " << area_menu << endl; 
     } 
 
+    // Volume formulas: 
 
+    void Vcube() { 
+        float a; // lenght of the cube
+        cout << "Insert the lenght of the cube: " << endl; 
+        cin >> a; 
+        double cube = pow(a, 3);
+        cout << "The volume of the cube is: " << cube << endl;
 
-
-
-
-
-
-    // Go Back Menu: 
-    void GoBackMeenu() { 
-
-        cout << "Your are Exiting Area Tab (Stay in Area = 0), (Leave to Advace Options = 1)" << endl; 
-        int GoBack;
-        cin >> GoBack;
-        if (GoBack == 1) { 
-            cout << "Exiting Tab"; 
+        int y; 
+        cout << "Want to continue? ( 0 = Yes, 1 = No)" << endl;
+        if (y == 1) { 
             advaceOptionsDips();
-        } else if(GoBack == 0) { 
-            AreaUniversal(); 
+        } else { 
+            Vcube(); 
         }
+    }
+
+    void VRectangle() { 
+        float l; // lenght 
+        float w; // width 
+        float h; // height
+
+        cout << "Enter the lenght:" << endl;
+        cin >> l; 
+        cout << "Enter the width:" << endl; 
+        cout << w; 
+        cout << "Enter the height:" << endl; 
+
+        // Formula: 
+       double rectangle = (l * w * h); 
+       cout << "The Volume is: " << rectangle << endl;
+
+       int y; 
+       cout << "Want to continue? ( 0 = Yes, 1 = No)" << endl;
+       if (y == 1) { 
+           advaceOptionsDips();
+       } else { 
+        VRectangle(); 
+       }
+    } 
+
+   void VCylinder() { 
+    const int PI = 3.14; 
+    float h; // height
+     float r; // radius
+
+     cout << "Enter the height:" << endl;
+     cin >> h; 
+     cout << "Enter the radius: " << endl; 
+     cin >> r; 
+
+    //  Formula: 
+
+    double Cylinder = (PI * pow(r,2) * h); 
+    cout << "The volume of a Cylinder: " << Cylinder << endl;
+
+    int y; 
+    cout << "Want to continue? ( 0 = Yes, 1 = No)" << endl;
+    if (y == 1) { 
+        advaceOptionsDips();
+    } else { 
+        VCylinder(); 
+    } 
+
+   }
+
+  void VCone() { 
+    
+    float r; // radius
+    const int PI = 3.14; 
+    float h; // height
+
+    cout << "Enter the height:" << endl;
+    cin >> h; 
+    cout << "Enter the radius: " << endl; 
+    cin >> r; 
+
+    // Formula" 
+
+    double Cone = ((1/3) * PI * pow(r, 2) * h);
+    cout <<  "The volume of a Cone is: " << Cone << endl;
+    
+    int y; 
+    cout << "Want to continue? ( 0 = Yes, 1 = No)" << endl;
+    if (y == 1) { 
+        advaceOptionsDips();
+    } else { 
+        VCone(); 
+    }
+  }
+
+  void VSphere() { 
+    int y; // Exit input. 
+    float r; // radius
+    const int PI = 3.14; // PI 
+
+    cout << "Enter the radius: " << endl; 
+
+    // Formula: 
+
+    double Sphere = ((4/3) * PI * pow(r, 3)); 
+
+    cout <<  "The volume of a Sphere is: " << Sphere << endl; 
+
+    cout << "Want to continue? ( 0 = Yes, 1 = No)" << endl;
+    if (y == 1) { 
+        advaceOptionsDips();
+    } else { 
+        VSphere(); 
+    }
+    
+    
+  }
+
+    void Volume() { 
+        int select_9; 
+        switch(select_9) { 
+            case 1: 
+            Vcube(); 
+            break;
+            case 2: 
+            VRectangle(); 
+            break; 
+            case 3: 
+            VCylinder(); 
+            break; 
+            case 4: 
+            VCone(); 
+            break; 
+            case 5: 
+            VSphere(); 
+            break;
+            default: 
+            calculator_on_screen();
+            break; 
+        }
+    
     }
 
 // Display Options
@@ -222,43 +403,48 @@ cout << "3. Calc Volume" << endl;
 cout << "4. Calc Pitagoras" << endl; 
 cout << "5. Exit." << endl; 
 
-// Switch Satement: 
-int selection_1;
-cin >> selection_1;
-switch(selection_1) { 
-case 1: 
-    userInput2();
-    Distance(); 
-    break; 
-    case 2: 
-    AreaUniversal(); 
-    break;
-    case 3: 
-    userInput2();
-    
-    case 4: 
-    userInput2();
-    break;
-    case 5: 
-    user_start_Exit(); 
-    break; 
-    default: 
-    calculator_on_screen();
-    break;
-}
 
+} 
+
+
+void Select1() {
+
+    int selection_1;
+    cin >> selection_1;
+    switch(selection_1) { 
+    case 1: 
+        userInput2();
+        Distance(); 
+        break; 
+        case 2: 
+        AreaUniversal(); 
+        break;
+        case 3: 
+        Volume();
+        case 4: 
+        Pitagoras();
+        break;
+        case 5: 
+        user_start_Exit(); 
+        break; 
+        default: 
+        calculator_on_screen();
+        break;
+    
+    }
 }
 
 // Checks if you typed exit. 
 void user_start_Exit() { 
     char user_answer;
-    cout << "Do you want to exit the program? \n"; 
+    cout << "Do you want to exit the program?\n"; 
     cout << "(Y or N) ";
     cin >> user_answer; 
     if (user_answer == 'Y' || user_answer == 'y') { 
     cout << "Ok then. Have a Good Day Sir/Madam" << endl; 
     }  else if (user_answer == 'N'|| user_answer == 'n')  { 
         calculator_on_screen(); 
+        selectLogic();
     }
 }
 
@@ -287,6 +473,11 @@ int main()
 MathCpp disp; 
 disp.calculator_on_screen();
 disp.selectLogic(); 
+disp.advaceOptionsDips(); // Hay un problema aqui al este al seleccionar 3 no usa volumen. 
+disp.Select1();  
  
 return 0; 
 }
+
+
+
